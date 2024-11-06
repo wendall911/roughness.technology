@@ -10,23 +10,19 @@
     $: invert = $mode === 'light' ? 'dark:invert' : '';
 </script>
 
-<div class="mr-4 hidden w-full items-center justify-between md:flex">
-    <a href="/" class="mr-6 flex items-center space-x-2">
-        <a class="flex flex-row items-center gap-2" href="/">
-            <img src={INFO.logo} class="ml-2 mr-3 h-6 sm:h-9 {invert}" alt={INFO.title} />
-        </a>
-        <span
-            class="hidden self-center whitespace-nowrap px-1 text-xl font-semibold leading-none sm:inline-block"
-        >
+<div class="justify-between flex flex-row w-full">
+    <a href="/">
+        <img id="logo" src={INFO.logo} class="ml-2 mr-3 mb-2 sm:h-9 max-h-9 {invert} inline" alt={METADATA.title} />
+        <h3 class="hidden self-center sm:inline mt-2" >
             {METADATA.title}
-        </span>
+        </h3>
     </a>
-    <nav class="flex flex-row items-center gap-6 text-sm">
+    <nav class="items-right text-sm mt-2">
         {#each NAVIGATION as link}
             <a
                 href={link.url}
                 class={cn(
-                    'hover:text-foreground transition-colors',
+                    'hover:text-foreground transition-colors pr-4 mb-2 align-middle inline-block',
                     $page.url.pathname.includes(link.url) ? 'text-foreground' : 'text-foreground/80'
                 )}
             >

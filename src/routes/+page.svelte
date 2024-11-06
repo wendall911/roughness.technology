@@ -8,7 +8,7 @@
 <main class="mx-4 my-12 flex max-w-5xl flex-col items-center gap-6 self-center">
     <article class="mb-8 flex flex-col gap-8">
         <div class="flex flex-col items-center self-center">
-            <h1 class="pb-1 text-5xl">{METADATA.title}</h1>
+            <h1>{METADATA.title}</h1>
             <span class="text-lg">{METADATA.description}</span>
         </div>
 
@@ -18,14 +18,14 @@
     </article>
 
     <article class="flex flex-col items-center gap-8" id="portfolio">
-        <h2 class="text-3xl">Projects Portfolio</h2>
+        <h2>Projects Portfolio</h2>
 
         <p class="font-semibold">Portfolio coming soon!</p>
     </article>
 
     <article class="mb-8 flex flex-col gap-8">
         <div class="flex flex-col items-center self-center">
-            <h2 class="text-5x1 pb-1">Privacy Policy</h2>
+            <h2>Privacy Policy</h2>
             <p class="my-2 max-w-2xl">
                 Roughness Technology, LLC and it's developers take your privacy very seriously. We
                 use no third-party analytics or advertising frameworks. Roughness Technology, LLC

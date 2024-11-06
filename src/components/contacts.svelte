@@ -18,7 +18,7 @@
             class="flex flex-row items-center gap-2 px-2"
             size="lg"
         >
-            <Mail class="mx-1 h-10 py-1" />
+            <Mail class="mx-1 h-10 py-1" aria-label="Email" />
         </a>
     </div>
     {#each accounts as account}
@@ -36,6 +36,8 @@
                         class="h-10 py-1 dark:invert"
                         viewBox="0 0 256 250"
                         fill="#fff"
+                        alt={account.name}
+                        aria-label={account.name}
                         xmlns="http://www.w3.org/2000/svg"
                         preserveAspectRatio="xMidYMid"
                     >
@@ -48,6 +50,7 @@
                     <svg
                         class="h-10 py-1"
                         alt={account.name}
+                        aria-label={account.name}
                         xmlns="http://www.w3.org/2000/svg"
                         preserveAspectRatio="xMidYMid"
                         viewBox="0 0 256 256"
