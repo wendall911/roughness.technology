@@ -10,6 +10,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Prepare
+        id: prepare
+        run: |
+          VERSION=${GITHUB_SHA::8}
+          if [[ $GITHUB_REF == refs/tags/* ]]; then
+            VERSION=${GITHUB_REF/refs\/tags\//}
+          fi
+          echo BUILD_DATE=$(date -u +'%Y-%m-%dT%H:%M:%SZ') >> $GITHUB_OUTPUT
+          echo VERSION=${VERSION} >> $GITHUB_OUTPUT
+
       - uses: actions/checkout@v3
       - name: Install dependencies
         run: npm ci
@@ -27,3 +37,4 @@ jobs:
           destination-repository-name: wendall911.github.io
           user-email: wendall@83864.com
           create-target-branch-if-needed: true
+          commit-message: "${{ steps.prepare.outputs.VERSION }}"
