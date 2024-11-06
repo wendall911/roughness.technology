@@ -1,4 +1,4 @@
-name: Deploy roughness.technology to GitHub pages repository wendall911.github.io
+name: Deploy roughness.technology CI
 
 on:
   push:
