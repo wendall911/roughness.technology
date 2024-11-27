@@ -5,7 +5,7 @@ export const METADATA = {
 };
 
 export const INFO = {
-    logo: 'logo.png',
+    logo: 'logo.svg',
     overview:
         'Offering a wide variety of software and consulting services. Educational software and development through assessment delivery and design consulting. Architectural support for platform migration. Indie game design and modding.',
     contact: {
@@ -25,6 +25,11 @@ export const INFO = {
                 url: 'https://github.com/wendall911',
                 github: true,
             },
+            {
+                name: 'Mastadon',
+                url: 'https://hachyderm.io/@wendall911',
+                mastadon: true,
+            }
         ],
     },
 };
