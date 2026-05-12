@@ -12,8 +12,10 @@ roughness.technology Website
 1. pnpm run preflight:release # install/audit/outdated/check/lint/test/build
 
 ## Deployment Notes
-1. pnpm install # Update packages and lockfile
+1. pnpm install # Update packages and generate/update pnpm-lock.yaml
 1. pnpm install --frozen-lockfile # Verify reproducible CI install
+1. CI enforces pnpm-lock.yaml with frozen lockfile installs; keep the lockfile current with dependency changes
+1. Commit pnpm-lock.yaml with dependency changes
 1. Update version in package.json
 1. Commit changes with "Release X.X.X"
 1. Tag release with git tag vX.X.X
