@@ -1,29 +1,33 @@
 <script lang="ts">
-    import { page } from '$app/stores';
+    import { page } from '$app/state';
     import cn from 'classnames';
     import ModeToggle from '$comp/header/mode-toggle.svelte';
     import { NAVIGATION } from '$content/links';
     import { INFO } from '$content/info';
     import { METADATA } from '$content/info';
-    import { mode } from 'mode-watcher';
-
-    $: invert = $mode === 'light' ? 'dark:invert' : '';
 </script>
 
-<div class="justify-between flex flex-row w-full">
+<div class="flex w-full flex-row justify-between">
+    <!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
     <a href="/">
-        <img id="logo" src={INFO.logo} class="ml-2 mr-3 mb-2 sm:h-9 max-h-9 {invert} inline" alt={METADATA.title} />
-        <h3 class="hidden self-center sm:inline mt-2" >
+        <img
+            id="logo"
+            src={INFO.logo}
+            class="logo-img mr-3 mb-2 ml-2 inline max-h-9 sm:h-9"
+            alt={METADATA.title}
+        />
+        <h3 class="mt-2 hidden self-center sm:inline">
             {METADATA.title}
         </h3>
     </a>
-    <nav class="items-right text-sm mt-2">
-        {#each NAVIGATION as link}
+    <nav class="items-right mt-2 text-sm">
+        {#each NAVIGATION as link (link.name)}
+            <!-- eslint-disable svelte/no-navigation-without-resolve -->
             <a
                 href={link.url}
                 class={cn(
-                    'hover:text-foreground transition-colors pr-4 mb-2 align-middle inline-block',
-                    $page.url.pathname.includes(link.url) ? 'text-foreground' : 'text-foreground/80'
+                    'hover:text-foreground mb-2 inline-block pr-4 align-middle transition-colors',
+                    page.url.pathname.includes(link.url) ? 'text-foreground' : 'text-foreground/80'
                 )}
             >
                 {link.name}

@@ -29,7 +29,7 @@ export const INFO = {
                 name: 'Mastadon',
                 url: 'https://hachyderm.io/@wendall911',
                 mastadon: true,
-            }
+            },
         ],
     },
 };

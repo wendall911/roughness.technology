@@ -16,8 +16,11 @@ const config = {
             mode: 'hash',
         },
         csrf: {
-            // Only disable if in development mode
-            checkOrigin: process.env.NODE_ENV !== 'development',
+            // In development, trust local dev origins while keeping CSRF checks enabled.
+            trustedOrigins:
+                process.env.NODE_ENV === 'development'
+                    ? ['http://localhost:5173', 'http://127.0.0.1:5173']
+                    : [],
         },
         alias: {
             $comp: './src/components',
