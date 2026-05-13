@@ -36,3 +36,14 @@ These rules are committed with this repository and should travel with the projec
 
 ## Content Rule
 - No AI written text for user-facing copy unless explicitly requested.
+
+## Node Test Script Safety
+- Release/validation commands must use non-watch test modes so commands terminate (for example `vitest run`, not `vitest`).
+- Watch mode must be isolated to explicit opt-in scripts (for example `test:watch`) and must not be used in preflight, CI, or release scripts.
+
+## Release Command Discipline
+- Use project-defined script commands only for release validation and publishing flows.
+- Do not substitute ad-hoc command chains when an official project script exists.
+- Path-pin build/release commands to this repository (for example `cd /home/wendallc/Repos/git/github/roughness.technology && ...`) and never rely on inherited cwd.
+- Before running package-manager scripts, verify `package.json` exists in the target repo; if not, stop and correct command context first.
+- Before release/version commits and tags, require a clean git tree including no untracked files.
