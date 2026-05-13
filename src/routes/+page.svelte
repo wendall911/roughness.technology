@@ -26,7 +26,7 @@
                             <img
                                 src={project.logo}
                                 alt={project.name}
-                                class="mb-3 h-16 object-contain"
+                                class="logo-img mb-3 h-16 object-contain"
                             />
                         {:else}
                             <h3>{project.name}</h3>
