@@ -1,17 +1,23 @@
 <script lang="ts">
+    import { resolve } from '$app/paths';
     import type { PageData } from './$types';
 
     export let data: PageData;
 </script>
 
+<!-- eslint-disable svelte/no-navigation-without-resolve -->
+
 <main class="mx-4 my-12 flex max-w-4xl flex-col gap-8 self-center">
-    <!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
-    <a class="font-semibold underline" href="/portfolio/">Back to portfolio</a>
+    <a class="font-semibold underline" href={resolve('/portfolio/')}>Back to portfolio</a>
 
     <article class="flex flex-col gap-6">
         <header>
             {#if data.project.logo}
-                <img src={data.project.logo} alt={data.project.name} class="mb-4 h-32 object-contain" />
+                <img
+                    src={data.project.logo}
+                    alt={data.project.name}
+                    class="mb-4 h-32 object-contain"
+                />
             {:else}
                 <h1>{data.project.name}</h1>
             {/if}
@@ -35,8 +41,12 @@
                             </ul>
                         {/if}
                         {#if section.link}
-                            <!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
-                            <a class="underline" href={section.link.url} target="_blank" rel="noopener noreferrer">
+                            <a
+                                class="underline"
+                                href={section.link.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
                                 {section.link.name}
                             </a>
                         {/if}
@@ -44,7 +54,6 @@
                             <ul class="list-disc pl-5">
                                 {#each section.links as link (link.name)}
                                     <li>
-                                        <!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
                                         <a
                                             class="underline"
                                             href={link.url}

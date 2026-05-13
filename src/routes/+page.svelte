@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { resolve } from '$app/paths';
     import Contacts from '$comp/Contacts.svelte';
     import { INFO } from '$content/info';
     import { METADATA } from '$content/info';
@@ -22,7 +23,11 @@
                 <section id={project.slug} class="rounded border p-5">
                     <header>
                         {#if project.logo}
-                            <img src={project.logo} alt={project.name} class="mb-3 h-16 object-contain" />
+                            <img
+                                src={project.logo}
+                                alt={project.name}
+                                class="mb-3 h-16 object-contain"
+                            />
                         {:else}
                             <h3>{project.name}</h3>
                         {/if}
@@ -48,14 +53,18 @@
                                         alt={image.description}
                                         class="h-52 w-full rounded object-contain"
                                     />
-                                    <figcaption class="pt-2 text-sm">{image.description}</figcaption>
+                                    <figcaption class="pt-2 text-sm">
+                                        {image.description}
+                                    </figcaption>
                                 </figure>
                             {/each}
                         </div>
                     {/if}
 
-                    <!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
-                    <a class="mt-4 inline-block font-semibold underline" href={`/portfolio/${project.slug}/`}>
+                    <a
+                        class="mt-4 inline-block font-semibold underline"
+                        href={resolve(`/portfolio/${project.slug}/`)}
+                    >
                         View project details
                     </a>
                 </section>

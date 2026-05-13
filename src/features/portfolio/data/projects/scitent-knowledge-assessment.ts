@@ -3,8 +3,7 @@ import type { Project } from '../../model';
 export const scitentKnowledgeAssessment: Project = {
     slug: 'scitent-knowledge-assessment',
     name: 'Scitent Knowledge Assessment',
-    description:
-        'Assessment delivery system migration to scalable cloud architecture.',
+    description: 'Assessment delivery system migration to scalable cloud architecture.',
     date: 'Completed',
     sections: [
         {
