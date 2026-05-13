@@ -29,7 +29,12 @@ try {
     }
 
     const headTags = run('git tag --points-at HEAD');
-    const tags = headTags ? headTags.split('\n').map((x) => x.trim()).filter(Boolean) : [];
+    const tags = headTags
+        ? headTags
+              .split('\n')
+              .map((x) => x.trim())
+              .filter(Boolean)
+        : [];
     if (!tags.includes(expectedTag)) {
         fail(`HEAD is missing expected tag "${expectedTag}".`);
     }
