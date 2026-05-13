@@ -16,7 +16,7 @@
                 <img
                     src={data.project.logo}
                     alt={data.project.name}
-                    class="logo-img mb-4 h-32 object-contain" 
+                    class="logo-img mb-4 h-32 object-contain"
                 />
             {:else}
                 <h1>{data.project.name}</h1>
