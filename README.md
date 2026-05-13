@@ -20,4 +20,5 @@ roughness.technology Website
 1. Update version in package.json
 1. Commit changes with "Release X.X.X"
 1. Tag release with git tag vX.X.X
-1. git push && git push --tags # Will kick off CI from GitHub Actions
+1. pnpm run deploy:verify # Requires clean tree, Release X.X.X commit on HEAD, and matching vX.X.X tag on HEAD
+1. pnpm run deploy:release # Runs preflight + verify, then pushes commit and tags

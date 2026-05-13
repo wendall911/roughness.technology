@@ -14,7 +14,9 @@
         "test:integration": "playwright test",
         "test:unit": "vitest run",
         "test:unit:watch": "vitest",
-        "preflight:release": "pnpm install --frozen-lockfile && pnpm audit && pnpm outdated && pnpm run check && pnpm run lint && pnpm run test && pnpm run build"
+        "preflight:release": "pnpm install --frozen-lockfile && pnpm audit && pnpm outdated && pnpm run check && pnpm run lint && pnpm run test && pnpm run build",
+        "deploy:verify": "node scripts/enforce-deploy-strategy.mjs",
+        "deploy:release": "pnpm run preflight:release && pnpm run deploy:verify && git push && git push --tags"
     },
     "devDependencies": {
         "@playwright/test": "^1.60.0",

@@ -47,3 +47,5 @@ These rules are committed with this repository and should travel with the projec
 - Path-pin build/release commands to this repository (for example `cd /home/wendallc/Repos/git/github/roughness.technology && ...`) and never rely on inherited cwd.
 - Before running package-manager scripts, verify `package.json` exists in the target repo; if not, stop and correct command context first.
 - Before release/version commits and tags, require a clean git tree including no untracked files.
+- If CI deployment is tag-gated, deployment is incomplete until both commit and tags are pushed.
+- Follow README deployment steps exactly in order; do not skip tag creation or alter release commit/tag conventions.

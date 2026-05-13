@@ -25,3 +25,9 @@ These instructions are always-on for this repository.
 - Apply one minimal corrective change at a time during incident recovery.
 - Verify each change before proceeding to the next edit.
 - Keep changes scoped to the files directly involved in the reported issue.
+
+## Deployment Strategy
+- For deployment, execute README Deployment Notes exactly in order with no substitutions.
+- Deployment is blocked unless `pnpm run deploy:verify` passes.
+- Do not push deployment commits without pushing tags.
+- Treat deployment as incomplete until both commit and tag push are done.
