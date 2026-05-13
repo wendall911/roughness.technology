@@ -5,7 +5,7 @@ export const METADATA = {
 };
 
 export const INFO = {
-    logo: 'logo.svg',
+    logo: '/logo.svg',
     overview:
         'Offering a wide variety of software and consulting services. Educational software and development through assessment delivery and design consulting. Architectural support for platform migration. Indie game design and modding.',
     contact: {

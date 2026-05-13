@@ -10,7 +10,11 @@
 
     <article class="flex flex-col gap-6">
         <header>
-            <h1>{data.project.name}</h1>
+            {#if data.project.logo}
+                <img src={data.project.logo} alt={data.project.name} class="mb-4 h-32 object-contain" />
+            {:else}
+                <h1>{data.project.name}</h1>
+            {/if}
             <p class="text-sm opacity-80">{data.project.date}</p>
             <p>{data.project.description}</p>
         </header>

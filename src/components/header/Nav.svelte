@@ -3,7 +3,7 @@
     import { slide } from 'svelte/transition';
     import { quadInOut } from 'svelte/easing';
 
-    import MainNav from '$comp/header/main-nav.svelte';
+    import MainNav from '$comp/header/MainNav.svelte';
 </script>
 
 <header

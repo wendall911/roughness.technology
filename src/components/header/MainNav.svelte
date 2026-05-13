@@ -1,10 +1,18 @@
 <script lang="ts">
     import { page } from '$app/state';
     import cn from 'classnames';
-    import ModeToggle from '$comp/header/mode-toggle.svelte';
+    import ModeToggle from '$comp/header/ModeToggle.svelte';
     import { NAVIGATION } from '$content/links';
     import { INFO } from '$content/info';
     import { METADATA } from '$content/info';
+
+    const isActive = (url: string, pathname: string) => {
+        if (url.startsWith('/#')) {
+            return pathname === '/';
+        }
+
+        return pathname === url || pathname.startsWith(url);
+    };
 </script>
 
 <div class="flex w-full flex-row justify-between">
@@ -27,7 +35,7 @@
                 href={link.url}
                 class={cn(
                     'hover:text-foreground mb-2 inline-block pr-4 align-middle transition-colors',
-                    page.url.pathname.includes(link.url) ? 'text-foreground' : 'text-foreground/80'
+                    isActive(link.url, page.url.pathname) ? 'text-foreground' : 'text-foreground/80'
                 )}
             >
                 {link.name}

@@ -1,10 +1,10 @@
-import { PORTFOLIO } from './portfolio';
+import { PORTFOLIO } from '$features/portfolio/data/projects';
 import { INFO } from './info';
 
 export const NAVIGATION = [
     {
         name: 'Contact',
-        url: '#contact',
+        url: '/#contact',
         sub: [
             {
                 name: 'Email',
@@ -15,11 +15,11 @@ export const NAVIGATION = [
     },
     {
         name: 'Portfolio',
-        url: '#portfolio',
+        url: '/#portfolio',
         sub: [
             ...PORTFOLIO.map((portfolio) => ({
                 name: portfolio.name,
-                url: `#${encodeURIComponent(portfolio.name.toLowerCase().replace(/ /g, '-'))}`,
+                url: `/portfolio/${portfolio.slug}/`,
             })),
         ],
     },

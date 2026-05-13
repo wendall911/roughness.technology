@@ -1,8 +1,8 @@
 <script>
     import '../app.css';
     import { ModeWatcher } from 'mode-watcher';
-    import Head from '$comp/head.svelte';
-    import Nav from '$comp/header/nav.svelte';
+    import Head from '$comp/Head.svelte';
+    import Nav from '$comp/header/Nav.svelte';
 </script>
 
 <Head />
