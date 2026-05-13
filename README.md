@@ -7,6 +7,7 @@ roughness.technology Website
 ## Dev Notes
 1. pnpm run build # Builds site in ../website
 1. pnpm run dev # Runs local dev server
+1. Keep shared utilities in src/lib as TypeScript only (do not add parallel .js duplicates)
 
 ## Pre-publishing
 1. pnpm run preflight:release # install/audit/outdated/check/lint/test/build
