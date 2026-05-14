@@ -2,6 +2,14 @@
 
 These rules are committed with this repository and should travel with the project across devices.
 
+## Read First (Mandatory)
+- Approval-first execution: do not modify files, commit, tag, or push without explicit user approval for that exact next action.
+- Pause after each approved action and request approval before the next action.
+- Scope lock: do only what was requested; do not add adjacent work.
+- Before any implementation action, review these guardrails and confirm they are being applied.
+- Initial read-only discovery is allowed before implementation, but no write action may begin until guardrails are reviewed.
+- After each action, verify and report exact outcomes (changed files, commit message, push target/hash where applicable).
+
 ## Sync Policy
 - Keep this file in sync with global rules at `/home/wendallc/.config/Code/User/prompts/global-guardrails.instructions.md`.
 - On any project guardrail update, mirror equivalent updates to the global/shared guardrails.
