@@ -37,6 +37,9 @@ jobs:
             - name: Build website
               run: pnpm run build
 
+            - name: Generate CNAME
+              run: echo "roughness.technology" > build/CNAME
+
             - name: Deploy to wendall911.github.io
               uses: cpina/github-action-push-to-another-repository@v1.7.2
               env:
