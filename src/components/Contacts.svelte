@@ -1,6 +1,6 @@
 <script lang="ts">
     import { INFO as info } from '$content/info';
-    import { Mail } from 'lucide-svelte';
+    import { Mail } from '@lucide/svelte';
 
     const accounts = info.contact.accounts;
     const mail = info.contact.messaging;

@@ -1,6 +1,6 @@
 <script lang="ts">
     import { toggleMode, mode } from 'mode-watcher';
-    import { MoonIcon, SunIcon } from 'lucide-svelte';
+    import { MoonIcon, SunIcon } from '@lucide/svelte';
 </script>
 
 <button
