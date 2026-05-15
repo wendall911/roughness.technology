@@ -1,9 +1,11 @@
-# Workspace Copilot Instructions
+# Agent Instructions
 
 These instructions are always-on for this repository.
 
 ## Session Startup
-- At the start of every new chat session, read `.github/guardrails.md` and `LESSONS_LEARNED_WHILE_TRAINING_AI.md` before making any changes.
+- At the start of every new chat session, read `.github/guardrails.md` first — unconditionally, before any other file, question, or action. `.github/guardrails.md` is authoritative for this repository.
+- After guardrails are confirmed, read `.github/project-context.md`.
+- The full guardrails apply to every action, response, and decision in the session — not only to changes.
 - Compare the project rules with the global rules and treat the stricter rule as authoritative.
 - If the user reports a regression, stop forward edits, roll back the breaking change first, verify the rollback, then apply a minimal fix.
 
