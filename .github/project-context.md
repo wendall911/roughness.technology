@@ -17,6 +17,16 @@ Business website for Roughness Technology, LLC (consulting). Hosted statically a
 - `main` is the only active development branch
 - Releases are marked with tags; there are no version branches
 
+## Session Start Workflow
+
+Before beginning any work, synchronize with the remote:
+
+1. `git fetch origin` — check for remote changes without modifying the working tree
+2. `git status` — verify the local repository is clean before rebasing
+3. `git rebase origin/main` — apply any remote changes; fast-forwards if no local commits diverge
+
+External PR contributions are possible. Always fetch before starting work. This workflow applies to this source repo only — do not run fetch or rebase in the `wendall911.github.io` deployment repo.
+
 ## Deployment Model
 - GitHub Actions deploys static output to `wendall911.github.io` on push
 - `pnpm run deploy:verify` must pass before any release
