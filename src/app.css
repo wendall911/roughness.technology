@@ -1,11 +1,14 @@
 @import 'tailwindcss/index.css';
 
+@custom-variant light (&:where(.light, .light *));
+
+/* Dark is the default (no class); .light is the opt-in. */
 .logo-img {
-    filter: invert(1);
+    filter: none;
 }
 
-.dark .logo-img {
-    filter: none;
+.light .logo-img {
+    filter: invert(1);
 }
 
 @layer base {

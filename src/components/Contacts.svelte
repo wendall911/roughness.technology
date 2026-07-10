@@ -30,7 +30,7 @@
             >
                 {#if account.github}
                     <svg
-                        class="h-10 py-1 dark:invert"
+                        class="h-10 py-1 light:invert"
                         viewBox="0 0 256 250"
                         fill="#fff"
                         aria-label={account.name}
